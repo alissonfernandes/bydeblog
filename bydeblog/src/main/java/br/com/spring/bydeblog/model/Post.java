@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "POST")
@@ -19,9 +20,11 @@ public class Post {
     private Long id;
     
     @Column
+    @NotBlank
     private String title;
     
     @Column
+    @NotBlank
     private String author;
     
     @Column
@@ -29,6 +32,7 @@ public class Post {
     private LocalDate date;
     
     @Column
+    @NotBlank
     @Lob
     private String text;
 
