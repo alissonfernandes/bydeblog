@@ -26,7 +26,7 @@ public class BydeblogController {
     
     @RequestMapping(value = "/posts/{id}", method = RequestMethod.GET)
     public ModelAndView getPost(@PathVariable("id") Long id){
-        ModelAndView modelAndView = new ModelAndView("postDetails");
+        ModelAndView modelAndView = new ModelAndView("post");
         Post post = bydeblogService.findById(id);
         modelAndView.addObject("post", post);
         return modelAndView;
