@@ -14,7 +14,6 @@
         <header>
             <nav class="navbar navbar-light bg-light">
                 <span class="navbar-brand sm-0 h1" style="font-weight: bold;">BydeBlog</span>
-                <a href="/newpost" class="btn btn-primary" role="button">New Post</a>
             </nav>
         </header>
        
@@ -26,28 +25,31 @@
 
                     <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
                         <li class="breadcrumb-item" aria-current="page"><a href="/posts">Posts</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Post</li>
+                        <li class="breadcrumb-item active" aria-current="page">New Post</li>
                     </ol>
 
                 </nav>
 
-               <article>
+                <div>
+                    <form action="" method="post">
 
-                    <h1 class="card-title" style="font-weight: bold; margin-bottom: 20px;"><span th:text="${post.title}"></span></h1>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="title" placeholder="Título *">
+                        </div>
 
-                    <p class="card-subtitle mb-2 text-muted">
-                        <i class="material-icons">person_outline</i>
-                        <span th:text="${post.author}"></span>
-                        <br>
-                        <i class="material-icons">date_range</i>
-                        <span th:text="${post.date}"></span>
-                    </p>
+                        <div class="form-group" style="margin-top: 10px;">
+                            <input type="text" class="form-control" name="author" placeholder="Autor *">
+                        </div>
 
-                    <section>
-                        <p class="card-text" style="margin-top: 40px;"><span th:utext="${post.text}"></span></p>
-                    </section>
-               </article>
+                        <textarea type="text" class="form-control" name="text" placeholder="Texto *" style="margin-top: 10px;"></textarea>
 
+                        <small class="form-text text-muted">(*) Campos obrigatórios</small>
+
+                        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Publicar</button>
+                        <a href="/posts" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
+                        
+                    </form>
+                </div>
             </div>
 
         </main>
